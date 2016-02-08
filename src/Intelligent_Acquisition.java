@@ -319,6 +319,7 @@ public class Intelligent_Acquisition {
                 System.out.println(properties.get(j));
                 System.out.println(mmc.getProperty(devices.get(i),properties.get(j)));
                 mapPair = new MapPair(properties.get(j),mmc.getProperty(devices.get(i),properties.get(j)));
+                mapList.add(mapPair);
             }
         }
 
@@ -330,17 +331,15 @@ public class Intelligent_Acquisition {
                 Configuration cdata = mmc.getConfigData(configs.get(i), presets.get(j));
                 System.out.println("Configuration " + configs.get(i) + "," + presets.get(j));
                 mapPair = new MapPair("Configuration " + configs.get(i),presets.get(j));
+                mapList.add(mapPair);
                 for (int k=0; k<cdata.size(); k++) {
                     PropertySetting s = cdata.getSetting(k);
                     System.out.println(" " + s.getDeviceLabel() + ", " + s.getPropertyName() + ", " + s.getPropertyValue());
-                    mapPair = new MapPair(s.getDeviceLabel() + " " + s.getPropertyName(),presets.get(j));
+                    mapPair = new MapPair(s.getDeviceLabel() + " " + s.getPropertyName(), s.getPropertyValue());
+                    mapList.add(mapPair);
                 }
             }
         }
-        mapList.add(mapPair);
-        int mapAnnotationIndex = 0;
-        int annotationRefIndex = 0;
-        String mapAnnotationID = MetadataTools.createLSID("MapAnnotation", 0, mapAnnotationIndex);
 
         for(int i=0; i<noOfRows ; i++){
             if(i>0){
@@ -386,6 +385,8 @@ public class Intelligent_Acquisition {
      */
     private static void bfSave(String path, ArrayList<MapPair> mapList) throws FormatException, IOException, DependencyException, ServiceException {
 
+        File imageFile = new File(path);
+        if (imageFile != null) imageFile.delete();
         //save metadata as map-annotations in the ome-xml
         ImagePlus plus = WindowManager.getCurrentWindow().getImagePlus();
 
@@ -425,19 +426,18 @@ public class Intelligent_Acquisition {
         //populate minimal metadata
         MetadataTools.populateMetadata(metadata, 0, null, false, "XYZCT",
                 FormatTools.getPixelTypeString(pixelType), width, height, sizeZ, sizeC, sizeT, samplesPerPixel);
-        mapList = new ArrayList<MapPair>();
 
         int mapAnnotationIndex = 0;
         int annotationRefIndex = 0;
-        String mapAnnotationID = MetadataTools.createLSID("MapAnnotation", 0, mapAnnotationIndex);
-        
+        String mapAnnotationID = MetadataTools.createLSID("MicroManagerMapAnnotation", 0, mapAnnotationIndex);
+
         metadata.setMapAnnotationID(mapAnnotationID, mapAnnotationIndex);
         metadata.setMapAnnotationValue(mapList, mapAnnotationIndex);
         metadata.setMapAnnotationAnnotator("MicroManager Map Annotation", mapAnnotationIndex);
         metadata.setMapAnnotationDescription("MicroManager Description", mapAnnotationIndex);
         metadata.setMapAnnotationNamespace("MicroManager NameSpace", mapAnnotationIndex);
         metadata.setImageAnnotationRef(mapAnnotationID,0, annotationRefIndex);
-        
+
         //Initialize writer and save file
         ImageWriter writer = new ImageWriter();
         writer.setMetadataRetrieve(metadata);
