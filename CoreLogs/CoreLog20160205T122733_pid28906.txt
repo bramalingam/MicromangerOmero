@@ -1,0 +1,91 @@
+2016-02-05T12:27:33.997974 tid0x10613b000 [IFO,LogManager] Enabled primary log file /Users/bramalingam/Documents/eclipse_workspace/Micromanger_Omero/CoreLogs/CoreLog20160205T122733_pid28906.txt
+2016-02-05T12:27:33.998039 tid0x10613b000 [IFO,App] User: bramalingam
+2016-02-05T12:27:33.998066 tid0x10613b000 [IFO,App] Host: ls29010.local
+2016-02-05T12:27:33.998073 tid0x10613b000 [IFO,App] MM Studio version: 1.4.22
+2016-02-05T12:27:33.998095 tid0x10613b000 [IFO,App] MMCore version 8.1.0
+2016-02-05T12:27:33.998110 tid0x10613b000 [IFO,App] Device API version 65, Module API version 10
+2016-02-05T12:27:33.998119 tid0x10613b000 [IFO,App] Operating System: Mac OS X (x86_64) 10.9.5
+2016-02-05T12:27:33.998128 tid0x10613b000 [IFO,App] JVM: Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_11, 64-bit
+2016-02-05T12:27:36.177478 tid0x10613b000 [IFO,App] Finished waiting for plugins to load
+2016-02-05T12:27:36.223615 tid0x10613b000 [IFO,Core] Did unload all devices
+2016-02-05T12:27:36.227256 tid0x10613b000 [IFO,Core] Did load device DHub from DemoCamera; label = DHub
+2016-02-05T12:27:36.227345 tid0x10613b000 [IFO,Core] Did load device DCam from DemoCamera; label = Camera
+2016-02-05T12:27:36.227407 tid0x10613b000 [IFO,Core] Did load device DWheel from DemoCamera; label = Dichroic
+2016-02-05T12:27:36.227430 tid0x10613b000 [IFO,Core] Did load device DWheel from DemoCamera; label = Emission
+2016-02-05T12:27:36.227449 tid0x10613b000 [IFO,Core] Did load device DWheel from DemoCamera; label = Excitation
+2016-02-05T12:27:36.227480 tid0x10613b000 [IFO,Core] Did load device DObjective from DemoCamera; label = Objective
+2016-02-05T12:27:36.227526 tid0x10613b000 [IFO,Core] Did load device DStage from DemoCamera; label = Z
+2016-02-05T12:27:36.227550 tid0x10613b000 [IFO,Core] Did load device DLightPath from DemoCamera; label = Path
+2016-02-05T12:27:36.227589 tid0x10613b000 [IFO,Core] Did load device DXYStage from DemoCamera; label = XY
+2016-02-05T12:27:36.227626 tid0x10613b000 [IFO,Core] Did load device DShutter from DemoCamera; label = Shutter
+2016-02-05T12:27:36.227670 tid0x10613b000 [IFO,Core] Did load device DAutoFocus from DemoCamera; label = Autofocus
+2016-02-05T12:27:36.227693 tid0x10613b000 [IFO,Core] Will initialize 11 devices
+2016-02-05T12:27:36.227695 tid0x10613b000 [IFO,Core] Will initialize device DHub
+2016-02-05T12:27:36.227701 tid0x10613b000 [IFO,Core] Did initialize device DHub
+2016-02-05T12:27:36.227705 tid0x10613b000 [IFO,Core] Will initialize device Camera
+2016-02-05T12:27:36.227819 tid0x10613b000 [IFO,Core] Did initialize device Camera
+2016-02-05T12:27:36.227821 tid0x10613b000 [IFO,Core] Default camera set to Camera
+2016-02-05T12:27:36.227823 tid0x10613b000 [IFO,Core] Will initialize device Dichroic
+2016-02-05T12:27:36.227870 tid0x10613b000 [IFO,Core] Did initialize device Dichroic
+2016-02-05T12:27:36.227873 tid0x10613b000 [IFO,Core] Will initialize device Emission
+2016-02-05T12:27:36.227899 tid0x10613b000 [IFO,Core] Did initialize device Emission
+2016-02-05T12:27:36.227900 tid0x10613b000 [IFO,Core] Will initialize device Excitation
+2016-02-05T12:27:36.227925 tid0x10613b000 [IFO,Core] Did initialize device Excitation
+2016-02-05T12:27:36.227926 tid0x10613b000 [IFO,Core] Will initialize device Objective
+2016-02-05T12:27:36.227943 tid0x10613b000 [IFO,Core] Did initialize device Objective
+2016-02-05T12:27:36.227946 tid0x10613b000 [IFO,Core] Will initialize device Z
+2016-02-05T12:27:36.227958 tid0x10613b000 [IFO,Core] Did initialize device Z
+2016-02-05T12:27:36.227960 tid0x10613b000 [IFO,Core] Will initialize device Path
+2016-02-05T12:27:36.227974 tid0x10613b000 [IFO,Core] Did initialize device Path
+2016-02-05T12:27:36.227976 tid0x10613b000 [IFO,Core] Will initialize device XY
+2016-02-05T12:27:36.227980 tid0x10613b000 [IFO,Core] Did initialize device XY
+2016-02-05T12:27:36.227982 tid0x10613b000 [IFO,Core] Default xy stage set to XY
+2016-02-05T12:27:36.227983 tid0x10613b000 [IFO,Core] Will initialize device Shutter
+2016-02-05T12:27:36.227992 tid0x10613b000 [IFO,Core] Did initialize device Shutter
+2016-02-05T12:27:36.227993 tid0x10613b000 [IFO,Core] Default shutter set to Shutter
+2016-02-05T12:27:36.227995 tid0x10613b000 [IFO,Core] Will initialize device Autofocus
+2016-02-05T12:27:36.228000 tid0x10613b000 [IFO,Core] Did initialize device Autofocus
+2016-02-05T12:27:36.228002 tid0x10613b000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-05T12:27:36.228004 tid0x10613b000 [IFO,Core] Finished initializing 11 devices
+2016-02-05T12:27:36.228179 tid0x10613b000 [IFO,Core] Default camera set to Camera
+2016-02-05T12:27:36.228328 tid0x10613b000 [IFO,Core] Default stage set to Z
+2016-02-05T12:27:36.232006 tid0x10613b000 [IFO,Core] Did update system state cache
+2016-02-05T12:27:36.245897 tid0x10613b000 [IFO,App] Updating GUI; config pad = true; from cache = false
+2016-02-05T12:27:36.246810 tid0x10613b000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-05T12:27:36.250655 tid0x10613b000 [IFO,Core] Did update system state cache
+2016-02-05T12:27:36.250696 tid0x10613b000 [IFO,App] Finished updating GUI
+2016-02-05T12:27:36.251748 tid0x10613b000 [IFO,App] Startup script file (/Users/bramalingam/Documents/eclipse_workspace/Micromanger_Omero/MMStartup.bsh) not present.
+2016-02-05T12:27:36.294338 tid0x10613b000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:36.391256 tid0x10613b000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:36.391405 tid0x10613b000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-05T12:27:36.392684 tid0x10613b000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:36.392742 tid0x10613b000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-05T12:27:36.395158 tid0x10613b000 [IFO,App] Rebuilding config group table
+2016-02-05T12:27:36.396690 tid0x10613b000 [IFO,App] Finished rebuilding config group table
+2016-02-05T12:27:36.588510 tid0x10613b000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:36.591575 tid0x12ac63000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:36.591625 tid0x12ac63000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-05T12:27:36.610782 tid0x10613b000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:36.611869 tid0x12ac63000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:36.611923 tid0x12ac63000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-05T12:27:36.612996 tid0x10613b000 [IFO,App] Error: Coercing frame count to 1
+2016-02-05T12:27:36.612999 tid0x10613b000 [IFO,App] Error: Coercing slice count to 1
+2016-02-05T12:27:36.613002 tid0x10613b000 [IFO,App] Error: Coercing position count to 1
+2016-02-05T12:27:37.279865 tid0x10613b000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:37.282162 tid0x12ac63000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:37.282223 tid0x12ac63000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-05T12:27:37.283250 tid0x10613b000 [IFO,App] Error: Coercing frame count to 1
+2016-02-05T12:27:37.283252 tid0x10613b000 [IFO,App] Error: Coercing slice count to 1
+2016-02-05T12:27:37.283254 tid0x10613b000 [IFO,App] Error: Coercing position count to 1
+2016-02-05T12:27:37.399141 tid0x10613b000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:37.400525 tid0x12ac63000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:37.400575 tid0x12ac63000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-05T12:27:37.401482 tid0x10613b000 [IFO,App] Error: Coercing frame count to 1
+2016-02-05T12:27:37.401484 tid0x10613b000 [IFO,App] Error: Coercing slice count to 1
+2016-02-05T12:27:37.401486 tid0x10613b000 [IFO,App] Error: Coercing position count to 1
+2016-02-05T12:27:37.515828 tid0x10613b000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:37.516883 tid0x12ac63000 [IFO,Core] Channel group set to Channel
+2016-02-05T12:27:37.516929 tid0x12ac63000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-05T12:27:37.517903 tid0x10613b000 [IFO,App] Error: Coercing frame count to 1
+2016-02-05T12:27:37.517905 tid0x10613b000 [IFO,App] Error: Coercing slice count to 1
+2016-02-05T12:27:37.517907 tid0x10613b000 [IFO,App] Error: Coercing position count to 1

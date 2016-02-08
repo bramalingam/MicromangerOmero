@@ -1,0 +1,67 @@
+2016-02-08T15:50:45.739671 tid0x1015b0000 [IFO,LogManager] Enabled primary log file /Users/bramalingam/Documents/eclipse_workspace/Micromanger_Omero/CoreLogs/CoreLog20160208T155045_pid37701.txt
+2016-02-08T15:50:45.739724 tid0x1015b0000 [IFO,App] User: bramalingam
+2016-02-08T15:50:45.739747 tid0x1015b0000 [IFO,App] Host: ls29010.local
+2016-02-08T15:50:45.739753 tid0x1015b0000 [IFO,App] MM Studio version: 1.4.22
+2016-02-08T15:50:45.739773 tid0x1015b0000 [IFO,App] MMCore version 8.1.0
+2016-02-08T15:50:45.739787 tid0x1015b0000 [IFO,App] Device API version 65, Module API version 10
+2016-02-08T15:50:45.739796 tid0x1015b0000 [IFO,App] Operating System: Mac OS X (x86_64) 10.9.5
+2016-02-08T15:50:45.739804 tid0x1015b0000 [IFO,App] JVM: Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_11, 64-bit
+2016-02-08T15:50:48.738414 tid0x1015b0000 [IFO,App] Finished waiting for plugins to load
+2016-02-08T15:50:48.779311 tid0x1015b0000 [IFO,Core] Did unload all devices
+2016-02-08T15:50:48.782572 tid0x1015b0000 [IFO,Core] Did load device DHub from DemoCamera; label = DHub
+2016-02-08T15:50:48.782661 tid0x1015b0000 [IFO,Core] Did load device DCam from DemoCamera; label = Camera
+2016-02-08T15:50:48.782707 tid0x1015b0000 [IFO,Core] Did load device DWheel from DemoCamera; label = Dichroic
+2016-02-08T15:50:48.782739 tid0x1015b0000 [IFO,Core] Did load device DWheel from DemoCamera; label = Emission
+2016-02-08T15:50:48.782758 tid0x1015b0000 [IFO,Core] Did load device DWheel from DemoCamera; label = Excitation
+2016-02-08T15:50:48.782791 tid0x1015b0000 [IFO,Core] Did load device DObjective from DemoCamera; label = Objective
+2016-02-08T15:50:48.782834 tid0x1015b0000 [IFO,Core] Did load device DStage from DemoCamera; label = Z
+2016-02-08T15:50:48.782858 tid0x1015b0000 [IFO,Core] Did load device DLightPath from DemoCamera; label = Path
+2016-02-08T15:50:48.782898 tid0x1015b0000 [IFO,Core] Did load device DXYStage from DemoCamera; label = XY
+2016-02-08T15:50:48.782932 tid0x1015b0000 [IFO,Core] Did load device DShutter from DemoCamera; label = Shutter
+2016-02-08T15:50:48.782972 tid0x1015b0000 [IFO,Core] Did load device DAutoFocus from DemoCamera; label = Autofocus
+2016-02-08T15:50:48.782988 tid0x1015b0000 [IFO,Core] Will initialize 11 devices
+2016-02-08T15:50:48.782991 tid0x1015b0000 [IFO,Core] Will initialize device DHub
+2016-02-08T15:50:48.782996 tid0x1015b0000 [IFO,Core] Did initialize device DHub
+2016-02-08T15:50:48.783000 tid0x1015b0000 [IFO,Core] Will initialize device Camera
+2016-02-08T15:50:48.783125 tid0x1015b0000 [IFO,Core] Did initialize device Camera
+2016-02-08T15:50:48.783127 tid0x1015b0000 [IFO,Core] Default camera set to Camera
+2016-02-08T15:50:48.783129 tid0x1015b0000 [IFO,Core] Will initialize device Dichroic
+2016-02-08T15:50:48.783181 tid0x1015b0000 [IFO,Core] Did initialize device Dichroic
+2016-02-08T15:50:48.783183 tid0x1015b0000 [IFO,Core] Will initialize device Emission
+2016-02-08T15:50:48.783210 tid0x1015b0000 [IFO,Core] Did initialize device Emission
+2016-02-08T15:50:48.783214 tid0x1015b0000 [IFO,Core] Will initialize device Excitation
+2016-02-08T15:50:48.783240 tid0x1015b0000 [IFO,Core] Did initialize device Excitation
+2016-02-08T15:50:48.783241 tid0x1015b0000 [IFO,Core] Will initialize device Objective
+2016-02-08T15:50:48.783261 tid0x1015b0000 [IFO,Core] Did initialize device Objective
+2016-02-08T15:50:48.783264 tid0x1015b0000 [IFO,Core] Will initialize device Z
+2016-02-08T15:50:48.783276 tid0x1015b0000 [IFO,Core] Did initialize device Z
+2016-02-08T15:50:48.783278 tid0x1015b0000 [IFO,Core] Will initialize device Path
+2016-02-08T15:50:48.783292 tid0x1015b0000 [IFO,Core] Did initialize device Path
+2016-02-08T15:50:48.783296 tid0x1015b0000 [IFO,Core] Will initialize device XY
+2016-02-08T15:50:48.783300 tid0x1015b0000 [IFO,Core] Did initialize device XY
+2016-02-08T15:50:48.783302 tid0x1015b0000 [IFO,Core] Default xy stage set to XY
+2016-02-08T15:50:48.783303 tid0x1015b0000 [IFO,Core] Will initialize device Shutter
+2016-02-08T15:50:48.783312 tid0x1015b0000 [IFO,Core] Did initialize device Shutter
+2016-02-08T15:50:48.783313 tid0x1015b0000 [IFO,Core] Default shutter set to Shutter
+2016-02-08T15:50:48.783315 tid0x1015b0000 [IFO,Core] Will initialize device Autofocus
+2016-02-08T15:50:48.783320 tid0x1015b0000 [IFO,Core] Did initialize device Autofocus
+2016-02-08T15:50:48.783322 tid0x1015b0000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:50:48.783324 tid0x1015b0000 [IFO,Core] Finished initializing 11 devices
+2016-02-08T15:50:48.783564 tid0x1015b0000 [IFO,Core] Default camera set to Camera
+2016-02-08T15:50:48.783731 tid0x1015b0000 [IFO,Core] Default stage set to Z
+2016-02-08T15:50:48.787656 tid0x1015b0000 [IFO,Core] Did update system state cache
+2016-02-08T15:50:48.804595 tid0x1015b0000 [IFO,App] Updating GUI; config pad = true; from cache = false
+2016-02-08T15:50:48.805688 tid0x1015b0000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:50:48.812112 tid0x1015b0000 [IFO,Core] Did update system state cache
+2016-02-08T15:50:48.812159 tid0x1015b0000 [IFO,App] Finished updating GUI
+2016-02-08T15:50:48.813498 tid0x1015b0000 [IFO,App] Startup script file (/Users/bramalingam/Documents/eclipse_workspace/Micromanger_Omero/MMStartup.bsh) not present.
+2016-02-08T15:50:48.854316 tid0x1015b0000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:50:48.965599 tid0x1015b0000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:50:48.965707 tid0x1015b0000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:50:48.966803 tid0x1015b0000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:50:48.966843 tid0x1015b0000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:50:48.968857 tid0x1015b0000 [IFO,App] Rebuilding config group table
+2016-02-08T15:50:48.969698 tid0x1015b0000 [IFO,App] Finished rebuilding config group table
+2016-02-08T15:50:49.030638 tid0x1015b0000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:50:49.033242 tid0x12639f000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:50:49.033293 tid0x12639f000 [IFO,Core] Default autofocus set to Autofocus

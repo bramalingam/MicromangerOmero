@@ -1,0 +1,118 @@
+2016-02-08T15:42:09.310309 tid0x1035c2000 [IFO,LogManager] Enabled primary log file /Users/bramalingam/Documents/eclipse_workspace/Micromanger_Omero/CoreLogs/CoreLog20160208T154209_pid37592.txt
+2016-02-08T15:42:09.310371 tid0x1035c2000 [IFO,App] User: bramalingam
+2016-02-08T15:42:09.310393 tid0x1035c2000 [IFO,App] Host: ls29010.local
+2016-02-08T15:42:09.310400 tid0x1035c2000 [IFO,App] MM Studio version: 1.4.22
+2016-02-08T15:42:09.310421 tid0x1035c2000 [IFO,App] MMCore version 8.1.0
+2016-02-08T15:42:09.310435 tid0x1035c2000 [IFO,App] Device API version 65, Module API version 10
+2016-02-08T15:42:09.310444 tid0x1035c2000 [IFO,App] Operating System: Mac OS X (x86_64) 10.9.5
+2016-02-08T15:42:09.310452 tid0x1035c2000 [IFO,App] JVM: Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_11, 64-bit
+2016-02-08T15:42:10.953376 tid0x1035c2000 [IFO,App] Finished waiting for plugins to load
+2016-02-08T15:42:10.999816 tid0x1035c2000 [IFO,Core] Did unload all devices
+2016-02-08T15:42:11.003111 tid0x1035c2000 [IFO,Core] Did load device DHub from DemoCamera; label = DHub
+2016-02-08T15:42:11.003201 tid0x1035c2000 [IFO,Core] Did load device DCam from DemoCamera; label = Camera
+2016-02-08T15:42:11.003246 tid0x1035c2000 [IFO,Core] Did load device DWheel from DemoCamera; label = Dichroic
+2016-02-08T15:42:11.003265 tid0x1035c2000 [IFO,Core] Did load device DWheel from DemoCamera; label = Emission
+2016-02-08T15:42:11.003281 tid0x1035c2000 [IFO,Core] Did load device DWheel from DemoCamera; label = Excitation
+2016-02-08T15:42:11.003310 tid0x1035c2000 [IFO,Core] Did load device DObjective from DemoCamera; label = Objective
+2016-02-08T15:42:11.003349 tid0x1035c2000 [IFO,Core] Did load device DStage from DemoCamera; label = Z
+2016-02-08T15:42:11.003372 tid0x1035c2000 [IFO,Core] Did load device DLightPath from DemoCamera; label = Path
+2016-02-08T15:42:11.003418 tid0x1035c2000 [IFO,Core] Did load device DXYStage from DemoCamera; label = XY
+2016-02-08T15:42:11.003450 tid0x1035c2000 [IFO,Core] Did load device DShutter from DemoCamera; label = Shutter
+2016-02-08T15:42:11.003488 tid0x1035c2000 [IFO,Core] Did load device DAutoFocus from DemoCamera; label = Autofocus
+2016-02-08T15:42:11.003505 tid0x1035c2000 [IFO,Core] Will initialize 11 devices
+2016-02-08T15:42:11.003507 tid0x1035c2000 [IFO,Core] Will initialize device DHub
+2016-02-08T15:42:11.003512 tid0x1035c2000 [IFO,Core] Did initialize device DHub
+2016-02-08T15:42:11.003516 tid0x1035c2000 [IFO,Core] Will initialize device Camera
+2016-02-08T15:42:11.003629 tid0x1035c2000 [IFO,Core] Did initialize device Camera
+2016-02-08T15:42:11.003631 tid0x1035c2000 [IFO,Core] Default camera set to Camera
+2016-02-08T15:42:11.003632 tid0x1035c2000 [IFO,Core] Will initialize device Dichroic
+2016-02-08T15:42:11.003679 tid0x1035c2000 [IFO,Core] Did initialize device Dichroic
+2016-02-08T15:42:11.003681 tid0x1035c2000 [IFO,Core] Will initialize device Emission
+2016-02-08T15:42:11.003707 tid0x1035c2000 [IFO,Core] Did initialize device Emission
+2016-02-08T15:42:11.003708 tid0x1035c2000 [IFO,Core] Will initialize device Excitation
+2016-02-08T15:42:11.003733 tid0x1035c2000 [IFO,Core] Did initialize device Excitation
+2016-02-08T15:42:11.003735 tid0x1035c2000 [IFO,Core] Will initialize device Objective
+2016-02-08T15:42:11.003752 tid0x1035c2000 [IFO,Core] Did initialize device Objective
+2016-02-08T15:42:11.003755 tid0x1035c2000 [IFO,Core] Will initialize device Z
+2016-02-08T15:42:11.003766 tid0x1035c2000 [IFO,Core] Did initialize device Z
+2016-02-08T15:42:11.003768 tid0x1035c2000 [IFO,Core] Will initialize device Path
+2016-02-08T15:42:11.003782 tid0x1035c2000 [IFO,Core] Did initialize device Path
+2016-02-08T15:42:11.003784 tid0x1035c2000 [IFO,Core] Will initialize device XY
+2016-02-08T15:42:11.003788 tid0x1035c2000 [IFO,Core] Did initialize device XY
+2016-02-08T15:42:11.003790 tid0x1035c2000 [IFO,Core] Default xy stage set to XY
+2016-02-08T15:42:11.003791 tid0x1035c2000 [IFO,Core] Will initialize device Shutter
+2016-02-08T15:42:11.003799 tid0x1035c2000 [IFO,Core] Did initialize device Shutter
+2016-02-08T15:42:11.003801 tid0x1035c2000 [IFO,Core] Default shutter set to Shutter
+2016-02-08T15:42:11.003803 tid0x1035c2000 [IFO,Core] Will initialize device Autofocus
+2016-02-08T15:42:11.003808 tid0x1035c2000 [IFO,Core] Did initialize device Autofocus
+2016-02-08T15:42:11.003810 tid0x1035c2000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:42:11.003811 tid0x1035c2000 [IFO,Core] Finished initializing 11 devices
+2016-02-08T15:42:11.004007 tid0x1035c2000 [IFO,Core] Default camera set to Camera
+2016-02-08T15:42:11.004152 tid0x1035c2000 [IFO,Core] Default stage set to Z
+2016-02-08T15:42:11.008469 tid0x1035c2000 [IFO,Core] Did update system state cache
+2016-02-08T15:42:11.020157 tid0x1035c2000 [IFO,App] Updating GUI; config pad = true; from cache = false
+2016-02-08T15:42:11.020922 tid0x1035c2000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:42:11.022717 tid0x1035c2000 [IFO,Core] Did update system state cache
+2016-02-08T15:42:11.022745 tid0x1035c2000 [IFO,App] Finished updating GUI
+2016-02-08T15:42:11.023696 tid0x1035c2000 [IFO,App] Startup script file (/Users/bramalingam/Documents/eclipse_workspace/Micromanger_Omero/MMStartup.bsh) not present.
+2016-02-08T15:42:11.062831 tid0x1035c2000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:42:11.165754 tid0x1035c2000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:42:11.165892 tid0x1035c2000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:42:11.167538 tid0x1035c2000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:42:11.167580 tid0x1035c2000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:42:11.169680 tid0x1035c2000 [IFO,App] Rebuilding config group table
+2016-02-08T15:42:11.170585 tid0x1035c2000 [IFO,App] Finished rebuilding config group table
+2016-02-08T15:42:11.237956 tid0x1035c2000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:42:11.239720 tid0x1262b9000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:42:11.239769 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:42:11.382614 tid0x1035c2000 [IFO,App] Thread 1 (main) terminated with uncaught exception
+2016-02-08T15:42:11.382654 tid0x1035c2000 [IFO,App] java.lang.Exception: Configuration group "Camera" or its preset "" does not exist
+2016-02-08T15:42:11.382750 tid0x1035c2000 [IFO,App]   at mmcorej.MMCoreJJNI.CMMCore_getConfigData(Native Method)
+2016-02-08T15:42:11.382761 tid0x1035c2000 [IFO,App]   at mmcorej.CMMCore.getConfigData(CMMCore.java:722)
+2016-02-08T15:42:11.382764 tid0x1035c2000 [IFO,App]   at Intelligent_Acquisition.main(Intelligent_Acquisition.java:328)
+2016-02-08T15:43:07.532015 tid0x1262b9000 [IFO,App] Refreshing config group table
+2016-02-08T15:43:07.532223 tid0x1262b9000 [IFO,App] Finished refreshing config group table
+2016-02-08T15:43:07.532246 tid0x1262b9000 [IFO,App] Updating GUI; config pad = false; from cache = false
+2016-02-08T15:43:07.532390 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:07.533214 tid0x1262b9000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:43:07.533266 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:07.533308 tid0x1262b9000 [IFO,App] Finished updating GUI
+2016-02-08T15:43:09.778159 tid0x1262b9000 [IFO,Core] Did update system state cache
+2016-02-08T15:43:09.778412 tid0x1262b9000 [IFO,App] Updating GUI; config pad = true; from cache = false
+2016-02-08T15:43:09.778545 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:09.779016 tid0x1262b9000 [IFO,App] Rebuilding config group table
+2016-02-08T15:43:09.779295 tid0x1262b9000 [IFO,App] Finished rebuilding config group table
+2016-02-08T15:43:09.779738 tid0x1262b9000 [IFO,Core] Did update system state cache
+2016-02-08T15:43:09.779990 tid0x1262b9000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:43:09.780042 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:09.780073 tid0x1262b9000 [IFO,App] Finished updating GUI
+2016-02-08T15:43:09.780811 tid0x1262b9000 [IFO,App] Refreshing config group table
+2016-02-08T15:43:09.780948 tid0x1262b9000 [IFO,App] Finished refreshing config group table
+2016-02-08T15:43:09.780954 tid0x1262b9000 [IFO,App] Updating GUI; config pad = false; from cache = false
+2016-02-08T15:43:09.781027 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:09.781626 tid0x1262b9000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:43:09.781664 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:09.781696 tid0x1262b9000 [IFO,App] Finished updating GUI
+2016-02-08T15:43:12.267907 tid0x1262b9000 [IFO,App] Refreshing config group table
+2016-02-08T15:43:12.268106 tid0x1262b9000 [IFO,App] Finished refreshing config group table
+2016-02-08T15:43:12.268115 tid0x1262b9000 [IFO,App] Updating GUI; config pad = false; from cache = false
+2016-02-08T15:43:12.268261 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:12.269030 tid0x1262b9000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:43:12.269082 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:12.269119 tid0x1262b9000 [IFO,App] Finished updating GUI
+2016-02-08T15:43:13.700511 tid0x1262b9000 [IFO,Core] Did update system state cache
+2016-02-08T15:43:13.700643 tid0x1262b9000 [IFO,App] Updating GUI; config pad = true; from cache = false
+2016-02-08T15:43:13.700806 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:13.701376 tid0x1262b9000 [IFO,App] Rebuilding config group table
+2016-02-08T15:43:13.701613 tid0x1262b9000 [IFO,App] Finished rebuilding config group table
+2016-02-08T15:43:13.702136 tid0x1262b9000 [IFO,Core] Did update system state cache
+2016-02-08T15:43:13.702374 tid0x1262b9000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:43:13.702425 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:13.702464 tid0x1262b9000 [IFO,App] Finished updating GUI
+2016-02-08T15:43:13.703824 tid0x1262b9000 [IFO,App] Refreshing config group table
+2016-02-08T15:43:13.704018 tid0x1262b9000 [IFO,App] Finished refreshing config group table
+2016-02-08T15:43:13.704025 tid0x1262b9000 [IFO,App] Updating GUI; config pad = false; from cache = false
+2016-02-08T15:43:13.704121 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:13.704714 tid0x1262b9000 [IFO,Core] Channel group set to Channel
+2016-02-08T15:43:13.704758 tid0x1262b9000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T15:43:13.704791 tid0x1262b9000 [IFO,App] Finished updating GUI

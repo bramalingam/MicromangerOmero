@@ -1,0 +1,129 @@
+2016-02-08T11:50:37.340185 tid0x101360000 [IFO,LogManager] Enabled primary log file /Users/bramalingam/Documents/eclipse_workspace/Micromanger_Omero/CoreLogs/CoreLog20160208T115037_pid31542.txt
+2016-02-08T11:50:37.340272 tid0x101360000 [IFO,App] User: bramalingam
+2016-02-08T11:50:37.340306 tid0x101360000 [IFO,App] Host: ls29010.local
+2016-02-08T11:50:37.340317 tid0x101360000 [IFO,App] MM Studio version: 1.4.22
+2016-02-08T11:50:37.340351 tid0x101360000 [IFO,App] MMCore version 8.1.0
+2016-02-08T11:50:37.340376 tid0x101360000 [IFO,App] Device API version 65, Module API version 10
+2016-02-08T11:50:37.340391 tid0x101360000 [IFO,App] Operating System: Mac OS X (x86_64) 10.9.5
+2016-02-08T11:50:37.340405 tid0x101360000 [IFO,App] JVM: Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_11, 64-bit
+2016-02-08T11:50:39.297904 tid0x101360000 [IFO,App] Finished waiting for plugins to load
+2016-02-08T11:50:39.377272 tid0x101360000 [IFO,Core] Did unload all devices
+2016-02-08T11:50:39.382697 tid0x101360000 [IFO,Core] Did load device DHub from DemoCamera; label = DHub
+2016-02-08T11:50:39.382843 tid0x101360000 [IFO,Core] Did load device DCam from DemoCamera; label = Camera
+2016-02-08T11:50:39.382919 tid0x101360000 [IFO,Core] Did load device DWheel from DemoCamera; label = Dichroic
+2016-02-08T11:50:39.382956 tid0x101360000 [IFO,Core] Did load device DWheel from DemoCamera; label = Emission
+2016-02-08T11:50:39.382989 tid0x101360000 [IFO,Core] Did load device DWheel from DemoCamera; label = Excitation
+2016-02-08T11:50:39.383040 tid0x101360000 [IFO,Core] Did load device DObjective from DemoCamera; label = Objective
+2016-02-08T11:50:39.383118 tid0x101360000 [IFO,Core] Did load device DStage from DemoCamera; label = Z
+2016-02-08T11:50:39.383160 tid0x101360000 [IFO,Core] Did load device DLightPath from DemoCamera; label = Path
+2016-02-08T11:50:39.383233 tid0x101360000 [IFO,Core] Did load device DXYStage from DemoCamera; label = XY
+2016-02-08T11:50:39.383292 tid0x101360000 [IFO,Core] Did load device DShutter from DemoCamera; label = Shutter
+2016-02-08T11:50:39.383360 tid0x101360000 [IFO,Core] Did load device DAutoFocus from DemoCamera; label = Autofocus
+2016-02-08T11:50:39.383388 tid0x101360000 [IFO,Core] Will initialize 11 devices
+2016-02-08T11:50:39.383392 tid0x101360000 [IFO,Core] Will initialize device DHub
+2016-02-08T11:50:39.383399 tid0x101360000 [IFO,Core] Did initialize device DHub
+2016-02-08T11:50:39.383406 tid0x101360000 [IFO,Core] Will initialize device Camera
+2016-02-08T11:50:39.383616 tid0x101360000 [IFO,Core] Did initialize device Camera
+2016-02-08T11:50:39.383619 tid0x101360000 [IFO,Core] Default camera set to Camera
+2016-02-08T11:50:39.383623 tid0x101360000 [IFO,Core] Will initialize device Dichroic
+2016-02-08T11:50:39.383712 tid0x101360000 [IFO,Core] Did initialize device Dichroic
+2016-02-08T11:50:39.383716 tid0x101360000 [IFO,Core] Will initialize device Emission
+2016-02-08T11:50:39.383769 tid0x101360000 [IFO,Core] Did initialize device Emission
+2016-02-08T11:50:39.383773 tid0x101360000 [IFO,Core] Will initialize device Excitation
+2016-02-08T11:50:39.383823 tid0x101360000 [IFO,Core] Did initialize device Excitation
+2016-02-08T11:50:39.383827 tid0x101360000 [IFO,Core] Will initialize device Objective
+2016-02-08T11:50:39.383860 tid0x101360000 [IFO,Core] Did initialize device Objective
+2016-02-08T11:50:39.383866 tid0x101360000 [IFO,Core] Will initialize device Z
+2016-02-08T11:50:39.383886 tid0x101360000 [IFO,Core] Did initialize device Z
+2016-02-08T11:50:39.383890 tid0x101360000 [IFO,Core] Will initialize device Path
+2016-02-08T11:50:39.383914 tid0x101360000 [IFO,Core] Did initialize device Path
+2016-02-08T11:50:39.383917 tid0x101360000 [IFO,Core] Will initialize device XY
+2016-02-08T11:50:39.383925 tid0x101360000 [IFO,Core] Did initialize device XY
+2016-02-08T11:50:39.383928 tid0x101360000 [IFO,Core] Default xy stage set to XY
+2016-02-08T11:50:39.383931 tid0x101360000 [IFO,Core] Will initialize device Shutter
+2016-02-08T11:50:39.383947 tid0x101360000 [IFO,Core] Did initialize device Shutter
+2016-02-08T11:50:39.383950 tid0x101360000 [IFO,Core] Default shutter set to Shutter
+2016-02-08T11:50:39.383953 tid0x101360000 [IFO,Core] Will initialize device Autofocus
+2016-02-08T11:50:39.383962 tid0x101360000 [IFO,Core] Did initialize device Autofocus
+2016-02-08T11:50:39.383965 tid0x101360000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T11:50:39.383969 tid0x101360000 [IFO,Core] Finished initializing 11 devices
+2016-02-08T11:50:39.384227 tid0x101360000 [IFO,Core] Default camera set to Camera
+2016-02-08T11:50:39.384475 tid0x101360000 [IFO,Core] Default stage set to Z
+2016-02-08T11:50:39.391256 tid0x101360000 [IFO,Core] Did update system state cache
+2016-02-08T11:50:39.409559 tid0x101360000 [IFO,App] Updating GUI; config pad = true; from cache = false
+2016-02-08T11:50:39.410757 tid0x101360000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T11:50:39.413299 tid0x101360000 [IFO,Core] Did update system state cache
+2016-02-08T11:50:39.413347 tid0x101360000 [IFO,App] Finished updating GUI
+2016-02-08T11:50:39.416287 tid0x101360000 [IFO,App] Startup script file (/Users/bramalingam/Documents/eclipse_workspace/Micromanger_Omero/MMStartup.bsh) not present.
+2016-02-08T11:50:39.469070 tid0x101360000 [IFO,Core] Channel group set to Channel
+2016-02-08T11:50:39.649616 tid0x101360000 [IFO,Core] Channel group set to Channel
+2016-02-08T11:50:39.649789 tid0x101360000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T11:50:39.651655 tid0x101360000 [IFO,Core] Channel group set to Channel
+2016-02-08T11:50:39.651730 tid0x101360000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T11:50:39.655312 tid0x101360000 [IFO,App] Rebuilding config group table
+2016-02-08T11:50:39.656770 tid0x101360000 [IFO,App] Finished rebuilding config group table
+2016-02-08T11:50:39.778290 tid0x101360000 [IFO,Core] Channel group set to Channel
+2016-02-08T11:50:39.784378 tid0x125114000 [IFO,Core] Channel group set to Channel
+2016-02-08T11:50:39.784454 tid0x125114000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T11:50:39.827401 tid0x101360000 [IFO,Core] Channel group set to Channel
+2016-02-08T11:50:39.829130 tid0x125114000 [IFO,Core] Channel group set to Channel
+2016-02-08T11:50:39.829209 tid0x125114000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T11:50:39.832438 tid0x101360000 [IFO,App] Error: Coercing position count to 1
+2016-02-08T11:50:39.838272 tid0x101360000 [IFO,Core] Channel group set to Channel
+2016-02-08T11:50:39.838651 tid0x101360000 [IFO,Core] Default autofocus set to Autofocus
+2016-02-08T11:50:41.257953 tid0x125114000 [IFO,App] Thread 26 (AWT-EventQueue-0) terminated with uncaught exception
+2016-02-08T11:50:41.257991 tid0x125114000 [IFO,App] java.lang.NullPointerException
+2016-02-08T11:50:41.258260 tid0x125114000 [IFO,App]   at ij.gui.ImageWindow.windowActivated(ImageWindow.java:555)
+2016-02-08T11:50:41.258272 tid0x125114000 [IFO,App]   at org.micromanager.imagedisplay.DisplayWindow.windowActivated(DisplayWindow.java:370)
+2016-02-08T11:50:41.258278 tid0x125114000 [IFO,App]   at java.awt.Window.processWindowEvent(Window.java:2070)
+2016-02-08T11:50:41.258283 tid0x125114000 [IFO,App]   at java.awt.Window.processEvent(Window.java:2017)
+2016-02-08T11:50:41.258288 tid0x125114000 [IFO,App]   at java.awt.Component.dispatchEventImpl(Component.java:4883)
+2016-02-08T11:50:41.258293 tid0x125114000 [IFO,App]   at java.awt.Container.dispatchEventImpl(Container.java:2292)
+2016-02-08T11:50:41.258298 tid0x125114000 [IFO,App]   at java.awt.Window.dispatchEventImpl(Window.java:2739)
+2016-02-08T11:50:41.258306 tid0x125114000 [IFO,App]   at java.awt.Component.dispatchEvent(Component.java:4705)
+2016-02-08T11:50:41.258312 tid0x125114000 [IFO,App]   at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1954)
+2016-02-08T11:50:41.258318 tid0x125114000 [IFO,App]   at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:995)
+2016-02-08T11:50:41.258323 tid0x125114000 [IFO,App]   at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:488)
+2016-02-08T11:50:41.258328 tid0x125114000 [IFO,App]   at java.awt.Component.dispatchEventImpl(Component.java:4754)
+2016-02-08T11:50:41.258333 tid0x125114000 [IFO,App]   at java.awt.Container.dispatchEventImpl(Container.java:2292)
+2016-02-08T11:50:41.258338 tid0x125114000 [IFO,App]   at java.awt.Window.dispatchEventImpl(Window.java:2739)
+2016-02-08T11:50:41.258343 tid0x125114000 [IFO,App]   at java.awt.Component.dispatchEvent(Component.java:4705)
+2016-02-08T11:50:41.258348 tid0x125114000 [IFO,App]   at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:746)
+2016-02-08T11:50:41.258352 tid0x125114000 [IFO,App]   at java.awt.EventQueue.access$400(EventQueue.java:97)
+2016-02-08T11:50:41.258357 tid0x125114000 [IFO,App]   at java.awt.EventQueue$3.run(EventQueue.java:697)
+2016-02-08T11:50:41.258362 tid0x125114000 [IFO,App]   at java.awt.EventQueue$3.run(EventQueue.java:691)
+2016-02-08T11:50:41.258369 tid0x125114000 [IFO,App]   at java.security.AccessController.doPrivileged(Native Method)
+2016-02-08T11:50:41.258374 tid0x125114000 [IFO,App]   at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+2016-02-08T11:50:41.258379 tid0x125114000 [IFO,App]   at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+2016-02-08T11:50:41.258384 tid0x125114000 [IFO,App]   at java.awt.EventQueue$4.run(EventQueue.java:719)
+2016-02-08T11:50:41.258388 tid0x125114000 [IFO,App]   at java.awt.EventQueue$4.run(EventQueue.java:717)
+2016-02-08T11:50:41.258392 tid0x125114000 [IFO,App]   at java.security.AccessController.doPrivileged(Native Method)
+2016-02-08T11:50:41.258397 tid0x125114000 [IFO,App]   at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+2016-02-08T11:50:41.258402 tid0x125114000 [IFO,App]   at java.awt.EventQueue.dispatchEvent(EventQueue.java:716)
+2016-02-08T11:50:41.258407 tid0x125114000 [IFO,App]   at java.awt.SentEvent.dispatch(SentEvent.java:70)
+2016-02-08T11:50:41.258413 tid0x125114000 [IFO,App]   at java.awt.DefaultKeyboardFocusManager$DefaultKeyboardFocusManagerSentEvent.dispatch(DefaultKeyboardFocusManager.java:217)
+2016-02-08T11:50:41.258418 tid0x125114000 [IFO,App]   at java.awt.DefaultKeyboardFocusManager.sendMessage(DefaultKeyboardFocusManager.java:244)
+2016-02-08T11:50:41.258423 tid0x125114000 [IFO,App]   at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:366)
+2016-02-08T11:50:41.258428 tid0x125114000 [IFO,App]   at java.awt.Component.dispatchEventImpl(Component.java:4754)
+2016-02-08T11:50:41.258433 tid0x125114000 [IFO,App]   at java.awt.Container.dispatchEventImpl(Container.java:2292)
+2016-02-08T11:50:41.258438 tid0x125114000 [IFO,App]   at java.awt.Window.dispatchEventImpl(Window.java:2739)
+2016-02-08T11:50:41.258442 tid0x125114000 [IFO,App]   at java.awt.Component.dispatchEvent(Component.java:4705)
+2016-02-08T11:50:41.258447 tid0x125114000 [IFO,App]   at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:746)
+2016-02-08T11:50:41.258452 tid0x125114000 [IFO,App]   at java.awt.EventQueue.access$400(EventQueue.java:97)
+2016-02-08T11:50:41.258456 tid0x125114000 [IFO,App]   at java.awt.EventQueue$3.run(EventQueue.java:697)
+2016-02-08T11:50:41.258461 tid0x125114000 [IFO,App]   at java.awt.EventQueue$3.run(EventQueue.java:691)
+2016-02-08T11:50:41.258465 tid0x125114000 [IFO,App]   at java.security.AccessController.doPrivileged(Native Method)
+2016-02-08T11:50:41.258470 tid0x125114000 [IFO,App]   at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+2016-02-08T11:50:41.258477 tid0x125114000 [IFO,App]   at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+2016-02-08T11:50:41.258482 tid0x125114000 [IFO,App]   at java.awt.EventQueue$4.run(EventQueue.java:719)
+2016-02-08T11:50:41.258486 tid0x125114000 [IFO,App]   at java.awt.EventQueue$4.run(EventQueue.java:717)
+2016-02-08T11:50:41.258490 tid0x125114000 [IFO,App]   at java.security.AccessController.doPrivileged(Native Method)
+2016-02-08T11:50:41.258495 tid0x125114000 [IFO,App]   at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+2016-02-08T11:50:41.258502 tid0x125114000 [IFO,App]   at java.awt.EventQueue.dispatchEvent(EventQueue.java:716)
+2016-02-08T11:50:41.258507 tid0x125114000 [IFO,App]   at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+2016-02-08T11:50:41.258513 tid0x125114000 [IFO,App]   at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+2016-02-08T11:50:41.258518 tid0x125114000 [IFO,App]   at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+2016-02-08T11:50:41.258523 tid0x125114000 [IFO,App]   at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+2016-02-08T11:50:41.258527 tid0x125114000 [IFO,App]   at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+2016-02-08T11:50:41.258532 tid0x125114000 [IFO,App]   at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2016-02-08T11:50:42.538182 tid0x1342bb000 [IFO,App] 18 images stored in 2487 ms.
