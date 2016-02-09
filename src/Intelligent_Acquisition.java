@@ -305,8 +305,6 @@ public class Intelligent_Acquisition {
         //Create MapPair Object and add to List
         ArrayList<MapPair> mapList = new ArrayList<MapPair>();
         MapPair mapPair;
-        mapPair = new MapPair("Example Key","Example Value");
-        mapList.add(mapPair);
         mapPair = new MapPair("Bio-Formats Version", FormatTools.VERSION);
         mapList.add(mapPair);
 
@@ -358,17 +356,22 @@ public class Intelligent_Acquisition {
                 gui.openAcquisition("Well" + i + "Field" + j, acqRoot, gui.getAcquisitionSettings().numFrames, gui.getAcquisitionSettings().channels.size(), gui.getAcquisitionSettings().slices.size());
                 gui.runAcquisition();
                 gui.closeAcquisition("Well" + i + "Field" + j);
-                //extract device properties and write them to a map-list
-                //                devices = mmc.getLoadedDevices();
 
+                //Extract ImageJ 
+                ImagePlus plus = WindowManager.getCurrentWindow().getImagePlus();
+                IMetadata metadata = ia.getMinimalMetadata(plus);
+                
+                //Set Map-Annotations
+                metadata = ia.setMapAnnotation(metadata, mapList);
+                
+                //Save Image with Metadata and MapAnnotations
                 String path = acqRoot + "Well" + i + "Field" + j + acqFormat;
-                bfSave(path, mapList);
+                ia.bfSave(path, plus, metadata);
 
                 String[] paths = {path};
                 ia.uploadImage(paths, datasetId, path);
                 // TODO Auto-generated method stub
-                //write Metadata
-                //write MapAnnotations
+
                 //Do something with Image
             }
         }
@@ -383,61 +386,11 @@ public class Intelligent_Acquisition {
      * @throws DependencyException 
      * @throws ServiceException 
      */
-    private static void bfSave(String path, ArrayList<MapPair> mapList) throws FormatException, IOException, DependencyException, ServiceException {
+    public void bfSave(String path, ImagePlus plus, IMetadata metadata) throws FormatException, IOException, DependencyException, ServiceException {
 
         File imageFile = new File(path);
-        if (imageFile != null) imageFile.delete();
-        //save metadata as map-annotations in the ome-xml
-        ImagePlus plus = WindowManager.getCurrentWindow().getImagePlus();
-
-        int pixelType = plus.getBitDepth();
-        int width = plus.getWidth();
-        int height = plus.getHeight();
-        int sizeC = plus.getNChannels();
-        int sizeT = plus.getNFrames();
-        int sizeZ = plus.getNSlices();
-        //Change this value if its not a gray-scale image
-        int samplesPerPixel = 1;
-
-        // create metadata object with minimum required metadata fields
-        System.out.println("Populating metadata...");
-        System.out.println("ImagePlus Type : " + plus.getType());
-        ServiceFactory factory = new ServiceFactory();
-        OMEXMLService service = factory.getInstance(OMEXMLService.class);
-        IMetadata metadata = service.createOMEXMLMetadata();
-        metadata.createRoot();
-
-        //add (minimum+Map)Annotations to the metadata object
-
-        //Extract and convert pixel Type
-        switch (plus.getType()) {
-            case ImagePlus.GRAY8:
-            case ImagePlus.COLOR_256:
-            case ImagePlus.COLOR_RGB:
-                pixelType = FormatTools.UINT8;
-                break;
-            case ImagePlus.GRAY16:
-                pixelType = FormatTools.UINT16;
-                break;
-            case ImagePlus.GRAY32:
-                pixelType = FormatTools.FLOAT;
-                break;
-        }
-        //populate minimal metadata
-        MetadataTools.populateMetadata(metadata, 0, null, false, "XYZCT",
-                FormatTools.getPixelTypeString(pixelType), width, height, sizeZ, sizeC, sizeT, samplesPerPixel);
-
-        int mapAnnotationIndex = 0;
-        int annotationRefIndex = 0;
-        String mapAnnotationID = MetadataTools.createLSID("MicroManagerMapAnnotation", 0, mapAnnotationIndex);
-
-        metadata.setMapAnnotationID(mapAnnotationID, mapAnnotationIndex);
-        metadata.setMapAnnotationValue(mapList, mapAnnotationIndex);
-        metadata.setMapAnnotationAnnotator("MicroManager Map Annotation", mapAnnotationIndex);
-        metadata.setMapAnnotationDescription("MicroManager Description", mapAnnotationIndex);
-        metadata.setMapAnnotationNamespace("MicroManager NameSpace", mapAnnotationIndex);
-        metadata.setImageAnnotationRef(mapAnnotationID,0, annotationRefIndex);
-
+        if (imageFile.isFile() && imageFile != null) imageFile.delete();
+        
         //Initialize writer and save file
         ImageWriter writer = new ImageWriter();
         writer.setMetadataRetrieve(metadata);
@@ -448,6 +401,9 @@ public class Intelligent_Acquisition {
         boolean doStack = writer.canDoStacks() && size > 1;
         int start = doStack ? 0 : plus.getCurrentSlice() - 1;
         int end = doStack ? size : start + 1;
+        
+        int width = plus.getWidth();
+        int height = plus.getHeight();
 
         byte[] plane = null;
         boolean littleEndian =
@@ -477,14 +433,68 @@ public class Intelligent_Acquisition {
                 System.arraycopy(pix[1], 0, plane, width * height, width * height);
                 System.arraycopy(pix[2], 0, plane, 2 * width * height, width * height);
             }
-            //            metadata.setChannelColor(arg0, arg1, arg2);
             writer.saveBytes(i, plane);
         }
         writer.close();
 
     }
+    
+    public IMetadata getMinimalMetadata(ImagePlus plus) throws DependencyException, ServiceException{
 
-    public static void bfSaveMinimal(String path){
+        int pixelType = plus.getBitDepth();
+        int width = plus.getWidth();
+        int height = plus.getHeight();
+        int sizeC = plus.getNChannels();
+        int sizeT = plus.getNFrames();
+        int sizeZ = plus.getNSlices();
+        //Change this value if its not a gray-scale image
+        int samplesPerPixel = 1;
+
+        // create metadata object with minimum required metadata fields
+        System.out.println("Populating metadata...");
+        System.out.println("ImagePlus Type : " + plus.getType());
+        ServiceFactory factory = new ServiceFactory();
+        OMEXMLService service = factory.getInstance(OMEXMLService.class);
+        IMetadata metadata = service.createOMEXMLMetadata();
+        metadata.createRoot();
+
+        //Extract and convert pixel Type
+        switch (plus.getType()) {
+            case ImagePlus.GRAY8:
+            case ImagePlus.COLOR_256:
+            case ImagePlus.COLOR_RGB:
+                pixelType = FormatTools.UINT8;
+                break;
+            case ImagePlus.GRAY16:
+                pixelType = FormatTools.UINT16;
+                break;
+            case ImagePlus.GRAY32:
+                pixelType = FormatTools.FLOAT;
+                break;
+        }
+        //populate minimal metadata
+        MetadataTools.populateMetadata(metadata, 0, null, false, "XYZCT",
+                FormatTools.getPixelTypeString(pixelType), width, height, sizeZ, sizeC, sizeT, samplesPerPixel);
+
+        return metadata;
+        
+    }
+    
+    public IMetadata setMapAnnotation(IMetadata metadata, ArrayList<MapPair> mapList){
+        int mapAnnotationIndex = 0;
+        int annotationRefIndex = 0;
+        String mapAnnotationID = MetadataTools.createLSID("MicroManagerMapAnnotation", 0, mapAnnotationIndex);
+
+        metadata.setMapAnnotationID(mapAnnotationID, mapAnnotationIndex);
+        metadata.setMapAnnotationValue(mapList, mapAnnotationIndex);
+        metadata.setMapAnnotationAnnotator("MicroManager Map Annotation", mapAnnotationIndex);
+        metadata.setMapAnnotationDescription("MicroManager Description", mapAnnotationIndex);
+        metadata.setMapAnnotationNamespace("MicroManager NameSpace", mapAnnotationIndex);
+        metadata.setImageAnnotationRef(mapAnnotationID,0, annotationRefIndex);
+        return metadata;
+    }
+
+    public void bfSaveMinimal(String path){
 
         StringBuffer buffer = new StringBuffer();
 
