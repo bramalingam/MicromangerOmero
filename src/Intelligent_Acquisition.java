@@ -4,13 +4,17 @@ import ij.ImagePlus;
 import ij.ImageStack;
 import ij.WindowManager;
 import ij.measure.Calibration;
+import ij.measure.ResultsTable;
+import ij.plugin.HyperStackConverter;
 import ij.process.ByteProcessor;
 import ij.process.ColorProcessor;
 import ij.process.FloatProcessor;
+import ij.process.ImageConverter;
 import ij.process.ImageProcessor;
 import ij.process.LUT;
 import ij.process.ShortProcessor;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -39,8 +43,13 @@ import mmcorej.CMMCore;
 import mmcorej.Configuration;
 import mmcorej.PropertySetting;
 import mmcorej.StrVector;
+import mmcorej.TaggedImage;
 
+import org.json.JSONObject;
 import org.micromanager.MMStudio;
+import org.micromanager.api.ImageCache;
+import org.micromanager.api.MMWindow;
+import org.micromanager.utils.ChannelSpec;
 import org.micromanager.utils.ImageUtils;
 
 import ome.formats.OMEROMetadataStoreClient;
@@ -133,6 +142,14 @@ public class Intelligent_Acquisition {
         mmConfigFile = new File("/Applications/Micro-Manager1.4_latest/MMConfig_demo.cfg");
     }
 
+    /**
+     * 
+     * @param hostName
+     * @param port
+     * @param userName
+     * @param password
+     * @throws DSOutOfServiceException
+     */
     public void connect(String hostName, int port, String userName, String password) throws DSOutOfServiceException{
         this.hostName = hostName;
         this.port = port;
@@ -146,7 +163,9 @@ public class Intelligent_Acquisition {
 
         gateway.connect(cred);
     }
-
+    /**
+     * 
+     */
     public void disconnect()
     {
         if (gateway != null) {
@@ -154,6 +173,14 @@ public class Intelligent_Acquisition {
         }
     }
 
+    /**
+     * 
+     * @param imagePath
+     * @param datasetID
+     * @param uploadType
+     * @return
+     * @throws Throwable
+     */
     public Collection<Long> uploadImage(String[] imagePath, long datasetID, String uploadType) throws Throwable{
 
         //Extract OMERO Session Information
@@ -183,13 +210,15 @@ public class Intelligent_Acquisition {
         OMEROWrapper reader = new OMEROWrapper(config);
 
         //ImportLibrary
-        ImportLibrary library;
-        if (uploadType.equalsIgnoreCase("UploadRmFileTransfer")) {
+        ImportLibrary library = null;
+        if (uploadType == null){
+            library = new ImportLibrary(store, reader);
+        }else if (uploadType.equalsIgnoreCase("UploadRmFileTransfer")) {
             library = new ImportLibrary(store, reader, new UploadRmFileTransfer());
         }else if (uploadType.equalsIgnoreCase("SymlinkFileTransfer")){
             library = new ImportLibrary(store, reader, new SymlinkFileTransfer());
         }else{
-            library = new ImportLibrary(store, reader);
+            IJ.error("Unknown Import Option");
         }
 
         //ErrorHandling and logging
@@ -224,6 +253,15 @@ public class Intelligent_Acquisition {
         return imageIds;
     }
 
+    /**
+     * 
+     * @param projectName
+     * @param gateway
+     * @return
+     * @throws ExecutionException
+     * @throws DSOutOfServiceException
+     * @throws DSAccessException
+     */
     public static ProjectData getFirstProjectWithName(String projectName, Gateway gateway) throws ExecutionException, DSOutOfServiceException, DSAccessException{
 
         BrowseFacility browse = gateway.getFacility(BrowseFacility.class);
@@ -248,6 +286,15 @@ public class Intelligent_Acquisition {
         return project;
     }
 
+    /**
+     * 
+     * @param datasetName
+     * @param gateway
+     * @return
+     * @throws ExecutionException
+     * @throws DSOutOfServiceException
+     * @throws DSAccessException
+     */
     public static DatasetData getFirstDatasetWithName(String datasetName, Gateway gateway) throws ExecutionException, DSOutOfServiceException, DSAccessException{
 
         BrowseFacility browse = gateway.getFacility(BrowseFacility.class);
@@ -272,11 +319,28 @@ public class Intelligent_Acquisition {
         return dataset;
     }
 
+    /**
+     * 
+     * @param x
+     * @param y
+     * @param fs
+     * @param nf
+     * @param nwx
+     * @param nwy
+     * @param xwd
+     * @param ywd
+     */
     public static void grid_calculator(int x,int y,int fs,int nf,int nwx,int nwy,int xwd,int ywd){
         // TODO Auto-generated method stub
         // Create method to calculate an Imaging grid based on parameters
         int xgrid = (x-fs*nf);
     }
+
+    /**
+     * 
+     * @param args
+     * @throws Throwable
+     */
     public static void main(String [ ] args) throws Throwable{
 
         //omero login
@@ -297,7 +361,7 @@ public class Intelligent_Acquisition {
         double y = mmc.getYPosition();
 
         //Matrix for imaging
-
+        //TODO use the grid_calculator here
         int noOfRows = 1;
         int noOfColumns = 1;
         int fieldSpacing = 100;
@@ -357,26 +421,60 @@ public class Intelligent_Acquisition {
                 gui.runAcquisition();
                 gui.closeAcquisition("Well" + i + "Field" + j);
 
-                //Extract ImageJ 
+                //Per-Image Properties as Map-Annotations
                 ImagePlus plus = WindowManager.getCurrentWindow().getImagePlus();
-                IMetadata metadata = ia.getMinimalMetadata(plus);
-                
-                //Set Map-Annotations
-                metadata = ia.setMapAnnotation(metadata, mapList);
-                
-                //Save Image with Metadata and MapAnnotations
-                String path = acqRoot + "Well" + i + "Field" + j + acqFormat;
-                ia.bfSave(path, plus, metadata);
+                MMWindow mmwindow = new MMWindow(plus) ;
+                int nFrames = gui.getAcquisitionSettings().numFrames;
+                int nChannels = gui.getAcquisitionSettings().channels.size();
+                int nSlices = gui.getAcquisitionSettings().slices.size();
+                for (int channel = 0; channel<nChannels; channel++){
+                    for(int slice = 0; slice<nSlices; slice++){
+                        for(int frame =0; frame<nFrames; frame++){
+                            JSONObject meta1 = mmwindow.getImageMetadata(channel, slice, frame, 0);
+                            Iterator<String> keys1 = meta1.keys();
+                            String[] perImageProperties = {"ChannelIndex","Slice", "SliceIndex", "SlicePosition","Frame","FrameIndex" , "Channel", "Dichroic-Label", "ElapsedTime-ms","Emission-Label",
+                                    "Excitation-Label","Exposure-ms", "PixelSizeUm","Time", "UUID", "XPositionUm", "YPositionUm", "ZPositionUm","Summary"
+                            };
+                            for (int iter = 0; iter<perImageProperties.length; iter++){
+                                Object value = meta1.get(perImageProperties[iter]);
+                                mapPair = new MapPair(perImageProperties[iter] , value.toString());
+                                mapList.add(mapPair);
+                            }
+                        }
+                    }
+                }
 
-                String[] paths = {path};
-                ia.uploadImage(paths, datasetId, path);
-                // TODO Auto-generated method stub
+                //Now run the macro
+                //IJ.runMacro(macroName);
+                //IJ.run("Threshold...");
+                //IJ.run("Close");
+                //IJ.run(plus, "Analyze Particles...", "display clear add stack");
+                
+                //Example illustration
+                IJ.run(plus, "Measure", "");
+                ResultsTable res = ij.measure.ResultsTable.getResultsTable();
+                
+                if(res.getCounter() > 0) {
+                    //Extract basic metadata from the ImagePlus object
+                    IMetadata metadata = ia.getMinimalMetadata(plus);
 
-                //Do something with Image
+                    //Set Map-Annotations
+                    metadata = ia.setMapAnnotation(metadata, mapList);
+
+                    //Save Image with Metadata and MapAnnotations
+                    String path = acqRoot + "Well" + i + "Field" + j + acqFormat;
+                    ia.bfSave(path, plus, metadata);
+
+                    String[] paths = {path};
+                    // TODO getDatasetId for a user defined dataset Name
+                    ia.uploadImage(paths, datasetId, null);
+                }
+
             }
         }
         ia.disconnect();
     }
+
     /**
      * Saves the current active Image on ImageJ, as an ome-tiff.
      * @param path
@@ -390,7 +488,7 @@ public class Intelligent_Acquisition {
 
         File imageFile = new File(path);
         if (imageFile.isFile() && imageFile != null) imageFile.delete();
-        
+
         //Initialize writer and save file
         ImageWriter writer = new ImageWriter();
         writer.setMetadataRetrieve(metadata);
@@ -401,7 +499,7 @@ public class Intelligent_Acquisition {
         boolean doStack = writer.canDoStacks() && size > 1;
         int start = doStack ? 0 : plus.getCurrentSlice() - 1;
         int end = doStack ? size : start + 1;
-        
+
         int width = plus.getWidth();
         int height = plus.getHeight();
 
@@ -433,12 +531,20 @@ public class Intelligent_Acquisition {
                 System.arraycopy(pix[1], 0, plane, width * height, width * height);
                 System.arraycopy(pix[2], 0, plane, 2 * width * height, width * height);
             }
+            // TODO setColorModel
             writer.saveBytes(i, plane);
         }
         writer.close();
 
     }
-    
+
+    /**
+     * 
+     * @param plus
+     * @return
+     * @throws DependencyException
+     * @throws ServiceException
+     */
     public IMetadata getMinimalMetadata(ImagePlus plus) throws DependencyException, ServiceException{
 
         int pixelType = plus.getBitDepth();
@@ -477,9 +583,15 @@ public class Intelligent_Acquisition {
                 FormatTools.getPixelTypeString(pixelType), width, height, sizeZ, sizeC, sizeT, samplesPerPixel);
 
         return metadata;
-        
+
     }
-    
+
+    /**
+     * 
+     * @param metadata
+     * @param mapList
+     * @return
+     */
     public IMetadata setMapAnnotation(IMetadata metadata, ArrayList<MapPair> mapList){
         int mapAnnotationIndex = 0;
         int annotationRefIndex = 0;
@@ -494,6 +606,10 @@ public class Intelligent_Acquisition {
         return metadata;
     }
 
+    /**
+     * 
+     * @param path
+     */
     public void bfSaveMinimal(String path){
 
         StringBuffer buffer = new StringBuffer();
