@@ -1,3 +1,4 @@
+package importPackage;
 import ij.CompositeImage;
 import ij.IJ;
 import ij.ImagePlus;
@@ -148,9 +149,10 @@ public class Intelligent_Acquisition {
      * @param port
      * @param userName
      * @param password
+     * @return 
      * @throws DSOutOfServiceException
      */
-    public void connect(String hostName, int port, String userName, String password) throws DSOutOfServiceException{
+    public Gateway connect(String hostName, int port, String userName, String password) throws DSOutOfServiceException{
         this.hostName = hostName;
         this.port = port;
         this.passWord = password;
@@ -162,6 +164,7 @@ public class Intelligent_Acquisition {
         cred.getUser().setPassword(password);
 
         gateway.connect(cred);
+        return gateway;
     }
     /**
      * 
@@ -181,7 +184,7 @@ public class Intelligent_Acquisition {
      * @return
      * @throws Throwable
      */
-    public Collection<Long> uploadImage(String[] imagePath, long datasetID, String uploadType) throws Throwable{
+    public Collection<Long> uploadImage(String[] imagePath,String hostName, long datasetID, String uploadType) throws Throwable{
 
         //Extract OMERO Session Information
         ExperimenterData user = gateway.getLoggedInUser();
@@ -196,7 +199,7 @@ public class Intelligent_Acquisition {
         config.sendReport.set(false);
         config.contOnError.set(false);
         config.debug.set(false);
-        config.hostname.set("localhost");
+        config.hostname.set(hostName);
         config.sessionKey.set(sessionKey);
         config.targetClass.set("omero.model.Dataset");
         config.targetId.set(datasetID);
@@ -467,12 +470,40 @@ public class Intelligent_Acquisition {
 
                     String[] paths = {path};
                     // TODO getDatasetId for a user defined dataset Name
-                    ia.uploadImage(paths, datasetId, null);
+                    ia.uploadImage(paths,hostName, datasetId, null);
                 }
 
             }
         }
         ia.disconnect();
+    }
+    
+    public void bfSaveSPW(String fileOut,int nRows,int nCols, int nFOV, ImagePlus plus,IMetadata metadata, String plateDescription){
+        
+        FileWriteSPW SPWWriter = new FileWriteSPW(fileOut, plateDescription);
+        int width = plus.getWidth();
+        int height = plus.getHeight();
+        
+        int sizet = plus.getNFrames();
+        
+        int[][] nFovInWell = new int[nRows][nCols];
+        for (int row = 0; row < nRows; row++) {
+          for (int col = 0; col < nCols; col++) {
+            nFovInWell[row][col] = nFOV;
+          }
+        }
+
+        byte[] plane;
+        ArrayList<String> delayList = new ArrayList<>();
+        delayList.add("1000");
+        delayList.add("2000");
+        delayList.add("3000");
+        
+        double[] exposureTimes = new double[sizet];
+        for (int t = 0; t < sizet; t++)  {
+          exposureTimes[t] = 1000.0;
+        }
+        boolean ok = SPWWriter.init(nFovInWell, width, height, delayList, exposureTimes);
     }
 
     /**
