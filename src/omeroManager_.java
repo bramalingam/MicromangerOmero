@@ -1,4 +1,16 @@
-package importPackage;
+
+import java.util.concurrent.ExecutionException;
+
+import ij.IJ;
+import ij.gui.*;
+import ij.plugin.PlugIn;
+import importPackage.SelectionDialog;
+import omero.ServerError;
+import omero.gateway.exception.DSAccessException;
+import omero.gateway.exception.DSOutOfServiceException;
+
+
+
 /*
  *------------------------------------------------------------------------------
  *  Copyright (C) 2014 University of Dundee. All rights reserved.
@@ -19,12 +31,6 @@ package importPackage;
  *
  *------------------------------------------------------------------------------
  */
-import ome.formats.importer.IObservable;
-import ome.formats.importer.IObserver;
-import ome.formats.importer.ImportCandidates;
-import ome.formats.importer.ImportEvent;
-import ome.formats.importer.ImportEvent.FILESET_UPLOAD_END;
-import ome.formats.importer.util.ErrorHandler;
 
 /**
  * 
@@ -33,21 +39,22 @@ import ome.formats.importer.util.ErrorHandler;
  * <a href="mailto:b.ramalingam@dundee.ac.uk">b.ramalingam@dundee.ac.uk</a>
  * @since 5.1
  */
-public class Status 
-implements IObserver{
+public class omeroManager_ implements PlugIn {
 
-    /**
-     * Displays the status of an on-going import.
-     * @see IObserver#update(IObservable, ImportEvent)
-     */
-    public void update(IObservable observable, ImportEvent event)
-    {
-        if (event == null) return;
-        System.err.println(event);
-        if (event instanceof ImportEvent.FILESET_UPLOAD_PREPARATION) {
-            ImportEvent.FILESET_UPLOAD_PREPARATION e = (ImportEvent.FILESET_UPLOAD_PREPARATION) event;
-            //e.exception.printStackTrace();
-            System.err.println("name:"+e.filename);
-        }
-    }
+	private static final double port = 0;
+	private static String host = "localhost";
+	private static String user = "root";
+	private static String pass = "omero";
+	private static String targetUser = "root";
+
+	public void run(String arg0) {
+		try {
+			new SelectionDialog();
+		} catch (ServerError | ExecutionException | DSOutOfServiceException | DSAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+
 }
